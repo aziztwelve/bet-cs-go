@@ -1,0 +1,102 @@
+    Архитектура проекта
+
+    Модуль «Мои ставки»
+
+
+
+
+\app\Models\User\BetsInfo
+        
+        protected $fillable:array = [equal, balance_id, all_out, all_in, compassion,  cs, cs_live, dota, dota_live, user_id]
+
+        public $timestamps = false;
+
+
+
+        public function equal():bool - сходится ли баланс или нет
+
+        public function allOut():integer - обновление “всего выводов”
+        public function allIn():integer -  обновление “всего пополнений”
+        public function compassion():integer - обновление “компенсация”
+        public function cs():integer - обновление “cs”
+        public function csLive():integer - обновление “cs_live”
+
+
+
+
+\app\Http\Controllers\User\BetsInfosController
+
+        public function index():array - реализует метод equal класса BetsInfo | получает данные и передает представлению
+        public function update():object - обновление вызывает методы (allIn,allOut,compassion,cs,csLive) класса BetsInfo | обновляет данные таблицы
+
+
+
+
+
+bets_infos
+        id integer(10) sequence
+        equal  smallinteger (5)
+        balance_id  integer(20)
+        all_in  integer(20)
+        all_out integer(20)
+        compassion integer(20)
+        cs numeric(20)
+        cs_live  numeric(20)
+        dota  numeric(20)
+        dota_live  numeric(20)
+        user_id  numeric(10)
+        indexes 
+            id unique
+                        dota nullable
+                        dota_live nullable
+
+
+
+
+
+    Главная страница   (пока только “одиночная игра”)
+
+
+
+\app\Models\Main  
+        protected $fillable:array = [date, game, team1,team2, emblem_t1, emblem_t2, sum_t1, sum_t2, coef_t1, coef_t2, percent_t1, percent_t1,result  ]
+         protected $table = 'bets';
+
+
+\app\Http\Controllers\MainController
+        public function index():arr - получает данные из бд и передает представлению 
+        public function store():bool - делает ставку и сохраняет в бд
+        potentialWin():int - алгоритм вывода “потенциальный выигриш”  (делается в vuejs)
+
+        public function upcoming():arr - алгоритм вывода “Предстоящие события ”
+        public function current():arr - алгоритм вывода “Текущие события”
+        public function past():arr - алгоритм вывода “Прошедшие события” 
+
+        public function changeToSet(): - алгоритм изменения тип данных enum на set
+                        $table_prefix = DB::getTablePrefix();
+                        DB::statement("ALTER TABLE `" . $table_prefix . "bets` CHANGE `game` `game` SET('game','league','stage');
+
+
+bets
+        id integer(10) sequence
+        date datetime
+        game enum array(‘game’, ‘league’, ‘stage’)
+        team1 varchar(50)
+        team2 varchar(50)
+        emblem_t1 varchar(100)
+        emblem_t2 varchar(100)
+        sum_t1 numeric(10)
+        sum_t2  numeric (10)
+        coef_t1 numeric(10)
+        coef_t2 numeric(10)
+        percent_t1  integer(10)
+        percent_t1  integer(10)
+
+        result  enum (‘score’, ‘wait’, ‘cancelled’)
+
+
+        indexes 
+            id unique
+
+
+

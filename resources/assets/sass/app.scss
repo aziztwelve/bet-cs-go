@@ -1,0 +1,87 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+ @import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+// @import "~font-awesome/scss/font-awesome";
+// @import "node_modules/font-awesome/scss/font-awesome.scss";
+@import "~font-awesome/scss/font-awesome.scss";
+
+
+// Bulma
+//@import "~bulma/bulma";
+
+// .navbar-laravel {
+//   background-color: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }
+
+
+.nav-head{
+	height: 75px;
+	background-image: url('/img/nav-img.jpg');
+}
+.nav-a {
+	color: white;
+}
+
+.nav-for-user{
+	float: left;
+	clear: both;
+	margin-left: 450px;
+	margin-top: 20px;
+}
+.nav-for-online{
+	float: left;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.nav-icon{
+	float: left;
+	color: #C96C61;
+}
+.nav-how-many{
+	color: white;
+	float: left;
+	margin-left: 15px;
+}
+
+.nav-count{
+font-family: 'Roboto Condensed', 'Segoe UI', Tahoma, Arial, sans-serif;
+text-transform: uppercase;margin-bottom: 1px;
+font-size: 18px;
+line-height: 18px;
+font-weight: 700;
+}
+.nav-word{
+font-family: 'Roboto Condensed', 'Segoe UI', Tahoma, Arial, sans-serif; 
+font-size: 10px;
+line-height: 10px;
+text-transform: uppercase;
+}
+.nav-sign{
+	z-index: 1000;
+}
+.navbar-item{
+	font-family: 'Roboto Condensed', 'Segoe UI', Tahoma, Arial, sans-serif; 
+font-size: 18px;
+line-height: 18px;
+font-weight: 700;
+color: #FFFFFF;
+margin-left: 110px;
+}
+.navbar-for-news{
+	font-family: 'Roboto Condensed', 'Segoe UI', Tahoma, Arial, sans-serif;
+font-size: 18px;
+line-height: 18px;
+font-weight: 700;
+color: #FFFFFF;
+margin-left: 50px;
+}
