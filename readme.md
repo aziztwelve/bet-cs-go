@@ -1,5 +1,15 @@
 Installation
 
+    Project:
+    create: 03-06.2018
+    php =>7.1
+    laravel =>5.6
+    vue.js =>2.5
+    
+    
+    
+    
+    
     Clone this repository: git clone git@109.120.152.200:triglav/betting-games.git
     Run 'composer install'
     Install 'node package' manager on your local machine: https://nodejs.org/en
